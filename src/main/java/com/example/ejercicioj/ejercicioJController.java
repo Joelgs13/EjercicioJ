@@ -23,25 +23,25 @@ public class ejercicioJController implements Initializable {
     @FXML
     private ImageView imgAzulOscuro;    // Imagen del coche azul oscuro
     @FXML
-    private ImageView imgBlanco;         // Imagen del coche blanco
+    private ImageView imgBlanco;        // Imagen del coche blanco
     @FXML
-    private ImageView imgCoche;          // Imagen del coche principal
+    private ImageView imgCoche;         // Imagen del coche principal
     @FXML
-    private ImageView imgGris;           // Imagen del coche gris
+    private ImageView imgGris;          // Imagen del coche gris
     @FXML
-    private ImageView imgGrisOscuro;     // Imagen del coche gris oscuro
+    private ImageView imgGrisOscuro;    // Imagen del coche gris oscuro
     @FXML
-    private ImageView imgLuz;            // Imagen de la luz del coche
+    private ImageView imgLuz;           // Imagen de la luz del coche
     @FXML
-    private ImageView imgMarron;         // Imagen del coche marrón
+    private ImageView imgMarron;        // Imagen del coche marrón
     @FXML
-    private ImageView imgNegro;          // Imagen del coche negro
+    private ImageView imgNegro;         // Imagen del coche negro
     @FXML
-    private ImageView imgRojo;           // Imagen del coche rojo
+    private ImageView imgRojo;          // Imagen del coche rojo
     @FXML
-    private ImageView logoLuz;           // Imagen del logo de luz
+    private ImageView logoLuz;          // Imagen del logo de luz
 
-    private boolean bEncendido;          // Estado de la luz (encendida/apagada)
+    private boolean bEncendido;         // Estado de la luz (encendida/apagada)
 
     /**
      * Método que cambia el icono de la luz entre encendido y apagado
@@ -53,92 +53,55 @@ public class ejercicioJController implements Initializable {
     void luz(MouseEvent event) {
         if (!bEncendido) {
             bEncendido = true;
-            logoLuz.setImage(new Image(getClass().getResource("/img/lucesOn.png").toString()));
+            logoLuz.setImage(new Image(getClass().getResourceAsStream("/img/lucesOn.png")));
         } else {
             bEncendido = false;
-            logoLuz.setImage(new Image(getClass().getResource("/img/lucesOff.png").toString()));
+            logoLuz.setImage(new Image(getClass().getResourceAsStream("/img/lucesOff.png")));
         }
         imgLuz.setVisible(bEncendido);
     }
 
     /**
-     * Método que cambia la imagen del coche a color azul claro.
-     *
-     * @param event El evento de ratón que desencadena el método.
+     * Métodos para cambiar el color del coche.
      */
     @FXML
     void colorAzulClaro(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniElectricBlue.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniElectricBlue.png")));
     }
 
-    /**
-     * Método que cambia la imagen del coche a color azul oscuro.
-     *
-     * @param event El evento de ratón que desencadena el método.
-     */
     @FXML
     void colorAzulOscuro(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniLapisluxuryBlue.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniLapisluxuryBlue.png")));
     }
 
-    /**
-     * Método que cambia la imagen del coche a color blanco.
-     *
-     * @param event El evento de ratón que desencadena el método.
-     */
     @FXML
     void colorBlanco(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniPepperWhite.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniPepperWhite.png")));
     }
 
-    /**
-     * Método que cambia la imagen del coche a color gris.
-     *
-     * @param event El evento de ratón que desencadena el método.
-     */
     @FXML
     void colorGris(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniMoonwalkGrey.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniMoonwalkGrey.png")));
     }
 
-    /**
-     * Método que cambia la imagen del coche a color gris oscuro.
-     *
-     * @param event El evento de ratón que desencadena el método.
-     */
     @FXML
     void colorGrisOscuro(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniThunderGray.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniThunderGray.png")));
     }
 
-    /**
-     * Método que cambia la imagen del coche a color marrón.
-     *
-     * @param event El evento de ratón que desencadena el método.
-     */
     @FXML
     void colorMarron(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniVolcaninOrange.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniVolcaninOrange.png")));
     }
 
-    /**
-     * Método que cambia la imagen del coche a color negro.
-     *
-     * @param event El evento de ratón que desencadena el método.
-     */
     @FXML
     void colorNegro(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniMidnightBlack.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniMidnightBlack.png")));
     }
 
-    /**
-     * Método que cambia la imagen del coche a color rojo.
-     *
-     * @param event El evento de ratón que desencadena el método.
-     */
     @FXML
     void colorRojo(MouseEvent event) {
-        imgCoche.setImage(new Image(getClass().getResource("/img/miniBlazingRed.png").toString()));
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniBlazingRed.png")));
     }
 
     /**
@@ -151,5 +114,7 @@ public class ejercicioJController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         bEncendido = false; // Inicializa la luz apagada
+        imgCoche.setImage(new Image(getClass().getResourceAsStream("/img/miniBlazingRed.png"))); // Imagen inicial
+        logoLuz.setImage(new Image(getClass().getResourceAsStream("/img/lucesOff.png"))); // Luz apagada inicial
     }
 }
